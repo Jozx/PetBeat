@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "909665595703",
+    "firebase_url": "https://test-db-35cc0.firebaseio.com",
+    "project_id": "test-db-35cc0",
+    "storage_bucket": "test-db-35cc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909665595703:android:6c1a5f0b689c97d7",
+        "android_client_info": {
+          "package_name": "com.jozxi.petbeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909665595703-eu3ocaf9gtdc56rlb1i7bqjcl9fh02rc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jozxi.petbeat",
+            "certificate_hash": "cf5aef601bf6f58be3f9038ce222f07afe61b604"
+          }
+        },
+        {
+          "client_id": "909665595703-5lm2nq3udb616nkrep3su0n74re7gg7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzuiPH3XMIDoJfDfZ7CTz-k27yy88suqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909665595703-5lm2nq3udb616nkrep3su0n74re7gg7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
