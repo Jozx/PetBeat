@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,13 +19,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.jozxi.petbeat.Objetos.FirebaseReferences;
-import com.jozxi.petbeat.Objetos.NodeMcu;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -86,24 +78,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
 
-            //Base de datos
-            final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference(FirebaseReferences.Petbeat_Reference);
-
-            myRef.child(FirebaseReferences.NodeMcu_Reference).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    NodeMcu nodeMcu = dataSnapshot.getValue(NodeMcu.class);
-
-                    Log.i("NodeMcu", dataSnapshot.toString());
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-
         } else {
             goLogInScreen();
         }
@@ -112,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private void goLogInScreen() {
         Intent intent = new Intent(this, LogInActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    public void menuGo (View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 
