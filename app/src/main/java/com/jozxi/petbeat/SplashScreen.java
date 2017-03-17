@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ProgressBar;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 /**
  * Created by jsara on 04/03/2017.
  */
@@ -33,7 +35,7 @@ public class SplashScreen extends Activity {
     private void doWork() {
         for (int progress=0; progress<100; progress+=10) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
                 mProgress.setProgress(progress);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -43,6 +45,10 @@ public class SplashScreen extends Activity {
     }
 
     private void startApp() {
+
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("Refreshed token: " ,refreshedToken);
+
         Intent intent = new Intent(SplashScreen.this, MainActivity.class);
         startActivity(intent);
     }

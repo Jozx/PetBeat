@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#5858FA</color>
+    <color name="colorPrimaryDark">#F78181</color>
     <color name="colorAccent">#29088A</color>
-    <color name="viewBg">#f1f5f8</color>
-    <color name="album_title">#4c4c4c</color>
 </resources>

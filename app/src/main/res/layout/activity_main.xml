@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jozxi.petbeat.MainActivity">
+    android:padding="16dp"
+    tools:context="com.jozxi.petbeat.MainActivity"
+    android:weightSum="1">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_width="317dp"
+        android:layout_height="233dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="0.45">
 
         <TextView
             android:id="@+id/welcomeTextView"
@@ -46,38 +46,27 @@
             android:text="@string/app_name"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/idTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="14sp" />
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ver sensores"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:onClick="menuGo"
-        />
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="log_out"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:onClick="logOut"
-        />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/button_circle"
+            android:drawableTop="@drawable/heartbeat"
+            android:paddingTop="20dp"
+            android:text="Sensores"
+            android:textColor="#fff"
+            android:onClick="menuGo"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="revoke"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:onClick="revoke"
-        />
+    </LinearLayout>
+
 
 
 </LinearLayout>
