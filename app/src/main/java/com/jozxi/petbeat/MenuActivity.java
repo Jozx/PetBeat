@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +27,8 @@ public class MenuActivity extends AppCompatActivity {
     List<NodeMcu> nodeMCUList;
 
     Adapter adapter;
+
+    MainActivity mainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +88,7 @@ public class MenuActivity extends AppCompatActivity {
             finish();
             return(true);
         case R.id.logout:
-            Toast.makeText(getApplicationContext(), "Salir desde pantalla principal", Toast.LENGTH_SHORT).show();
+            mainActivity.goLogInScreen();
             return (true);
     }
         return(super.onOptionsItemSelected(item));
@@ -97,4 +98,5 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SensoresActivity.class);
         startActivity(intent);
     }
+
 }

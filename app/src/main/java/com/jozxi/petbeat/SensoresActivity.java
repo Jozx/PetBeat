@@ -18,6 +18,8 @@ public class SensoresActivity extends AppCompatActivity {
     private TextView pulsoTextView;
     private TextView tempTextView;
 
+    MainActivity mainActivity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class SensoresActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+
     }
 
 
@@ -67,6 +70,10 @@ public class SensoresActivity extends AppCompatActivity {
         case R.id.back:
             finish();
             return(true);
+
+        case R.id.logout:
+            mainActivity.goLogInScreen();
+            return (true);
     }
         return(super.onOptionsItemSelected(item));
     }
