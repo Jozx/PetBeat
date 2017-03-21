@@ -7,7 +7,8 @@ package com.jozxi.petbeat.Objetos;
 public class NodeMcu {
 
     double heartBeat;
-    double temperature;
+    double obj_temperature;
+    double amb_temperature;
     String id;
     boolean qs;
 
@@ -15,9 +16,10 @@ public class NodeMcu {
     public NodeMcu() {
     }
 
-    public NodeMcu(double heartBeat, double temperature, String id, boolean qs) {
+    public NodeMcu(double heartBeat, double obj_temperature, double amb_temperature, String id, boolean qs) {
         this.heartBeat = heartBeat;
-        this.temperature = temperature;
+        this.obj_temperature = obj_temperature;
+        this.amb_temperature = amb_temperature;
         this.id = id;
         this.qs = qs;
     }
@@ -30,12 +32,20 @@ public class NodeMcu {
         this.heartBeat = heartBeat;
     }
 
-    public double getTemperature() {
-        return temperature;
+    public double getObj_temperature() {
+        return obj_temperature;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setObj_temperature(double obj_temperature) {
+        this.obj_temperature = obj_temperature;
+    }
+
+    public double getAmb_temperature() {
+        return amb_temperature;
+    }
+
+    public void setAmb_temperature(double amb_temperature) {
+        this.amb_temperature = amb_temperature;
     }
 
     public String getId() {

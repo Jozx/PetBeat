@@ -17,6 +17,7 @@ public class SensoresActivity extends AppCompatActivity {
 
     private TextView pulsoTextView;
     private TextView tempTextView;
+    private TextView ambTempTextView;
 
     MainActivity mainActivity;
 
@@ -32,6 +33,7 @@ public class SensoresActivity extends AppCompatActivity {
 
         pulsoTextView = (TextView) findViewById(R.id.pulso);
         tempTextView = (TextView) findViewById(R.id.temperatura);
+        ambTempTextView = (TextView) findViewById(R.id.amb_temperatura);
 
 
         database.getReference().getRoot().addValueEventListener(new ValueEventListener() {
@@ -43,7 +45,8 @@ public class SensoresActivity extends AppCompatActivity {
                         dataSnapshot.getChildren()){
                     NodeMcu nodeMcu = snapshot.getValue(NodeMcu.class);
                     pulsoTextView.setText(String.valueOf(nodeMcu.getHeartBeat()));
-                    tempTextView.setText(String.valueOf(nodeMcu.getTemperature()));
+                    tempTextView.setText(String.valueOf(nodeMcu.getObj_temperature()));
+                    ambTempTextView.setText(String.valueOf(nodeMcu.getAmb_temperature()));
                 }
 
             }

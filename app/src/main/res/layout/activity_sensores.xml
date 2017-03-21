@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/pulso"
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
@@ -32,12 +32,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="15dp">
 
 
         <TextView
             android:id="@+id/temperatura"
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
@@ -48,6 +48,29 @@
             android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:drawableLeft="@drawable/thermometer"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+
+        <TextView
+            android:id="@+id/amb_temperatura"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_circle"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="36"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:drawableLeft="@drawable/amb_temperature"/>
 
     </LinearLayout>
 
