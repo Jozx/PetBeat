@@ -1,7 +1,10 @@
 package com.jozxi.petbeat;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,11 +26,8 @@ import java.util.List;
 public class MenuActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
-
     List<NodeMcu> nodeMCUList;
-
     Adapter adapter;
-
     MainActivity mainActivity;
 
     @Override
@@ -60,6 +60,10 @@ public class MenuActivity extends AppCompatActivity {
                         dataSnapshot.getChildren()){
                     NodeMcu nodeMcu = snapshot.getValue(NodeMcu.class);
                     nodeMCUList.add(nodeMcu);
+
+                    if (nodeMcu.isQs() == false){
+                        mostrarAlerta();
+                    }
                 }
 
                 adapter.notifyDataSetChanged();
@@ -99,4 +103,32 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void mostrarAlerta()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+        alertDialogBuilder.setTitle("Ningun dispositivo activo");
+
+        // set dialog message
+        alertDialogBuilder
+                .setMessage("Apriete OK para continuar")
+                .setCancelable(false)
+                .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, close
+                        // current activity
+                        finish();
+                    }
+                });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
+    }
+
+    public Context getActivity() {
+        return this;
+    }
 }
