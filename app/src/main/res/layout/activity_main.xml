@@ -36,14 +36,14 @@
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:text=""
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/emailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:text=""
             android:textSize="16sp" />
 
 
@@ -66,6 +66,25 @@
             android:onClick="menuGo"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/button_circle"
+            android:drawableTop="@drawable/settings"
+            android:paddingTop="20dp"
+            android:text="Ajustes"
+            android:textColor="#fff"
+            android:onClick="configGo"/>
+    </LinearLayout>
+
+
 
 
 
