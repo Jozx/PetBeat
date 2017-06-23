@@ -61,7 +61,12 @@ public class MenuActivity extends AppCompatActivity {
                     NodeMcu nodeMcu = snapshot.getValue(NodeMcu.class);
                     nodeMCUList.add(nodeMcu);
 
-                    if (nodeMcu.isQs() == false){
+                    if (nodeMCUList.isEmpty())
+                    {
+                        mostrarAlerta();
+                    }
+
+                    if (nodeMcu.isQs() != true){
                         mostrarAlerta();
                     }
                 }
@@ -110,7 +115,7 @@ public class MenuActivity extends AppCompatActivity {
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Apriete OK para continuar")
+                .setMessage("OK para continuar")
                 .setCancelable(false)
                 .setPositiveButton("OK",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
