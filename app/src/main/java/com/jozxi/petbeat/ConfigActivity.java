@@ -46,8 +46,8 @@ public class ConfigActivity extends AppCompatActivity {
 
         Toast toast1 =
                 Toast.makeText(getApplicationContext(),
-                        "Dispositivo Agregado" +
-                                "Favor vaya atras", Toast.LENGTH_SHORT);
+                        "Dispositivo Agregado " +
+                                "- Favor vaya atras", Toast.LENGTH_SHORT);
 
         toast1.show();
 

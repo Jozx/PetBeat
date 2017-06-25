@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jozxi.petbeat">
-    //Solicita permiso para usar internet
+
     <uses-permission android:name="android.permission.INTERNET" />
-    //Solicita permiso determinar el estado de la red
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <service android:name=".FireIDService">
+        <intent-filter>
+            <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+        </intent-filter>
+    </service>
+
+    <service
+        android:name=".MyFirebaseMessagingService">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+    </service>
+
+    <service
+        android:name=".MyFirebaseInstanceIDService">
         <intent-filter>
             <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
         </intent-filter>
     </service>
 
-    <application
+
+<application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -34,6 +49,7 @@
         <activity android:name=".LogInActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".SensoresActivity" />
+        <activity android:name=".ConfigActivity"></activity>
     </application>
 
 </manifest>

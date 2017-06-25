@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private TextView nameTextView;
     private TextView emailTextView;
     private TextView idTextView;
+    private static final String TAG = "MainActivity";
+    private String refreshedToken;
 
     private GoogleApiClient googleApiClient;
 
@@ -68,10 +70,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet()) {
+                Object value = getIntent().getExtras().get(key);
+                Log.d(TAG, "Key: " + key + " Value: " + value);
+            }
+        }*/
+
         photoImageView = (ImageView) findViewById(R.id.photoImageView);
         nameTextView = (TextView) findViewById(R.id.nameTextView);
         emailTextView = (TextView) findViewById(R.id.emailTextView);
-
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -82,9 +90,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d("Current token: " ,refreshedToken);
+
     }
+
 
     @Override
     protected void onStart() {
@@ -127,6 +137,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     public void menuGo (View view) {
         Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
+
+    public void configGo (View view) {
+        Intent intent = new Intent(this, ConfigActivity.class);
+        intent.putExtra("token", refreshedToken);
         startActivity(intent);
     }
 
