@@ -13,7 +13,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingrese el codigo"
+        android:text="Ingrese el codigo del NodeMCU"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="196dp" />
 
@@ -25,6 +25,30 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:inputType="numberDecimal" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/opciones_animal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+    <RadioButton
+        android:id="@+id/radio_perro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:checked="true"
+        android:text="Perro" />
+
+    <RadioButton
+        android:id="@+id/radio_gato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Gato" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/button"
