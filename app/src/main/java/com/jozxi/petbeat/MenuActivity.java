@@ -42,13 +42,19 @@ public class MenuActivity extends AppCompatActivity {
 
         nodeMCUList = new ArrayList<>();
 
-        //Base de datos
+         //Base de datos
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         adapter = new Adapter(nodeMCUList);
 
         mRecyclerView.setAdapter(adapter);
+
+        //Se verifica tamaño de la lista
+        if (adapter.getItemCount() ==0)
+        {
+            mostrarAlerta();
+        }
 
 
         database.getReference().getRoot().addValueEventListener(new ValueEventListener() {
@@ -60,11 +66,6 @@ public class MenuActivity extends AppCompatActivity {
                         dataSnapshot.getChildren()){
                     NodeMcu nodeMcu = snapshot.getValue(NodeMcu.class);
                     nodeMCUList.add(nodeMcu);
-
-                    if (nodeMCUList.isEmpty())
-                    {
-                        mostrarAlerta();
-                    }
 
                     if (nodeMcu.isQs() != true){
                         mostrarAlerta();
